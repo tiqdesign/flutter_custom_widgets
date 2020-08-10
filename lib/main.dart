@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_components/components/appbar.dart';
 import 'package:flutter_components/components/card.dart';
 import 'package:flutter_components/components/chip.dart';
+import 'package:flutter_components/components/searchbox.dart';
 
 void main() {
   runApp(MyApp());
@@ -44,16 +45,12 @@ class _HomePageState extends State<HomePage> {
           photo: 'https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80',
         ),
         body: Center(
-          child: CustomChipWithGradient(
-            width: 150,
-            height: 40,
-            firstColor: Color(0xfffff917),
-            secondColor: Color(0xffffbc00),
-            beginGradient: Alignment.topLeft,
-            endGradient:  Alignment.bottomRight,
-            textWidget: Text('12 New', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),)
-          ),
-        ),
+          child: CustomSearchBar(
+            color: Color(0xff6E698F),
+            onPressed: (){
+
+            },
+          )),
       ),
     );
   }
