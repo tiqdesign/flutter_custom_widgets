@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_components/components/appbar.dart';
 import 'package:flutter_components/components/card.dart';
 import 'package:flutter_components/components/chip.dart';
+import 'package:flutter_components/components/profilecard.dart';
 import 'package:flutter_components/components/searchbox.dart';
 
 void main() {
@@ -34,23 +35,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey[200],
-        extendBodyBehindAppBar: true,
+        backgroundColor: Color(0xff0D5C46),
+        extendBodyBehindAppBar: false,
         appBar: CustomAppBar(
-          color: Colors.amber[200],
-          shadowColor: Colors.amber[600],
+          color: Colors.white,
+          shadowColor: Colors.grey[400],
           icon: Icon(Icons.filter_list, size: 30, color: Colors.black,),
           height: 60.0,
           child: Image.asset('assets/images/youtube.png',height: 50.0,),
-          photo: 'https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80',
+          photo: 'https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
         ),
-        body: Center(
-          child: CustomSearchBar(
-            color: Color(0xff6E698F),
-            onPressed: (){
-
-            },
-          )),
+        body: CustomProfileCard(
+          imageUrl: 'https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+          username: 'Samantha Martin',
+        ),
       ),
     );
   }
