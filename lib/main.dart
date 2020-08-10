@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/components/appbar.dart';
 import 'package:flutter_components/components/card.dart';
+import 'package:flutter_components/components/chip.dart';
 
 void main() {
   runApp(MyApp());
@@ -43,15 +44,14 @@ class _HomePageState extends State<HomePage> {
           photo: 'https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80',
         ),
         body: Center(
-          child: CustomCard(
-            backgroundColor: Colors.white,
-            borderRadius: 20.0,
-            title: 'Title',
-            subtitle: 'Subtitle',
-            imageUrl: 'https://images.unsplash.com/photo-1596990312047-41c43bb653ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-            icon: Icon(Icons.chevron_right, size: 30.0, color: Colors.black,),
-            onPressed: (){
-            },
+          child: CustomChipWithGradient(
+            width: 150,
+            height: 40,
+            firstColor: Color(0xfffff917),
+            secondColor: Color(0xffffbc00),
+            beginGradient: Alignment.topLeft,
+            endGradient:  Alignment.bottomRight,
+            textWidget: Text('12 New', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),)
           ),
         ),
       ),
