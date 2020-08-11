@@ -3,6 +3,7 @@ import 'package:flutter_components/components/appbar.dart';
 import 'package:flutter_components/components/card.dart';
 import 'package:flutter_components/components/chip.dart';
 import 'package:flutter_components/components/listitem.dart';
+import 'package:flutter_components/components/percent.dart';
 import 'package:flutter_components/components/profilecard.dart';
 import 'package:flutter_components/components/searchbox.dart';
 
@@ -47,40 +48,20 @@ class _HomePageState extends State<HomePage> {
           ),
           height: 60.0,
           child: Image.asset(
-            'assets/images/youtube.png',
-            height: 50.0,
+            'assets/images/logo.png',
+            height: 40.0,
           ),
           photo:
               'https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
         ),
-        body: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height-50,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30),bottomRight: Radius.circular(30))
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 80),
-            child: Column(children: [
-              CustomListItem(
-                color: Color(0xffC93F8D),
-                title: 'Graphics Assets',
-                icon: Icons.color_lens,
-              ),
-              CustomListItem(
-                color: Color(0xff3D3270),
-                title: 'Graphics Assets',
-                icon: Icons.color_lens,
-              ),
-              CustomListItem(
-                color: Color(0xff479696),
-                title: 'Graphics Assets',
-                icon: Icons.color_lens,
-              ),
-            ]),
-          ),
-        ),
+        body: Center(child: PercentIndicator(
+          radius: 100,
+          textColor: Color(0xfffffb00),
+          lineColor: Color(0xfffffb00),
+          backColor: Colors.grey[800],
+          duration: 800,
+          percent: 62,
+        )),
         bottomNavigationBar: new BottomAppBar(
           color: Color(0xff161718),
           shape: CircularNotchedRectangle(),
