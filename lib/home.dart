@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/components/button.dart';
+import 'package:flutter_components/components/chips_basic.dart';
 import 'package:flutter_components/components/profileCardMuvu.dart';
 
 import 'components/appbar.dart';
@@ -23,14 +24,57 @@ class _HomePageState extends State<HomePage> {
           backgroundColor:Colors.white,
           extendBodyBehindAppBar: false,
           appBar: buildCustomAppBar(),
-          body:CustomMuvuProfileCard(),
+          body:Container(
+            margin: EdgeInsets.only(left: 8.0),
+            height: 100,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children:[
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: CustomChip(
+                    backgroundColor: Colors.blue[800],
+                    label: 'Erikli',
+                    avatarColor: Colors.white
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: CustomChip(
+                    backgroundColor: Colors.red[800],
+                    label: 'Arçelik',
+                    avatarColor: Colors.white
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: CustomChip(
+                    backgroundColor: Colors.amber[800],
+                    label: 'Eti',
+                    avatarColor: Colors.white
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: CustomChip(
+                    backgroundColor: Colors.red[500],
+                    label: 'Eker',
+                    avatarColor: Colors.white
+                  ),
+                ),
+              ]
+            ),
+          ),
         ),
       ),
     );
   }
 
 
+
   //Widgets
+  CustomMuvuProfileCard buildCustomMuvuProfileCard() => CustomMuvuProfileCard();
+
   CustomAppBar buildCustomAppBar() {
     return CustomAppBar(
           color: Colors.white,
