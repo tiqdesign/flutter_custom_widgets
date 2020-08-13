@@ -16,7 +16,6 @@ class _MainStackState extends State<MainStack> {
   void openDrawer(){
     setState(() {
       isOpened = !isOpened;
-      print('Geldi');
     });
   }
 
