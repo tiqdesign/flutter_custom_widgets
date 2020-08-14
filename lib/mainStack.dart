@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/components/profilecard.dart';
 import 'package:flutter_components/home.dart';
+import 'package:flutter_components/login.dart';
 
 class MainStack extends StatefulWidget {
 
@@ -23,7 +24,7 @@ class _MainStackState extends State<MainStack> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.grey[800],
+        color: Colors.amber[600],
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Stack(
@@ -38,7 +39,7 @@ class _MainStackState extends State<MainStack> {
                    username: 'Tarık KAYA',
                    imageUrl: 'https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4.png',
                  ),
-                  CustomTab(icon: Icons.play_arrow,pageName: "Home Page",),
+                 CustomTab(icon: Icons.play_arrow,pageName: "Home Page",),
                  CustomTab(icon: Icons.play_arrow,pageName: "About Page",),
                  CustomTab(icon: Icons.play_arrow,pageName: "Contact Page",),
                  CustomTab(icon: Icons.play_arrow,pageName: "Profile Page",)
@@ -51,7 +52,8 @@ class _MainStackState extends State<MainStack> {
                 bottom: isOpened  ? MediaQuery.of(context).size.height/10 : 0,
                 left:  isOpened  ?  MediaQuery.of(context).size.width*0.6 : 0,
                 right:  isOpened  ? -MediaQuery.of(context).size.width/2 : 0,
-                child: HomePage(onPressedDrawer: openDrawer,))
+                child: LoginPage())
+              //HomePage(onPressedDrawer: openDrawer,))
           ],
         ),
       ),

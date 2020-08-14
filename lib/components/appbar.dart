@@ -22,44 +22,50 @@ class CustomAppBar extends StatefulWidget with PreferredSizeWidget {
 class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: widget.height,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        color:widget.color,
-        boxShadow:[
-          BoxShadow(
-            color: widget.shadowColor,
-            blurRadius: 0,
-            offset: Offset(4,4)
-          )
-        ],
-        borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20.0),
-        bottomRight: Radius.circular(20.0))
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          //Leading Icon Button For Drawer?!
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: IconButton(
-              onPressed: widget.onPressed,
-              icon:widget.icon
-            ),
-          ),
-          //Logo or Text
-          Expanded(child: Center(child: widget.child)),
-          //Circle Avatar for User
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: CircleAvatar(
-                radius: 24,
-                backgroundColor: Colors.black,
-                backgroundImage: NetworkImage(widget.photo),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Container(
+        height: widget.height,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          color:widget.color,
+          boxShadow:[
+            BoxShadow(
+              color: widget.shadowColor,
+              blurRadius: 0,
+              offset: Offset(0.7,4)
+            )
+          ],
+          borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20.0),
+          bottomRight: Radius.circular(20.0))
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            //Leading Icon Button For Drawer?!
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                onPressed: widget.onPressed,
+                icon:widget.icon
               ),
-          ),
-        ],
+            ),
+            //Logo or Text
+            Expanded(child: Center(child: widget.child)),
+            //Circle Avatar for User
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CircleAvatar(
+                radius: 28,
+                backgroundColor: Colors.amber[600],
+                child: CircleAvatar(
+                    radius: 19,
+                    backgroundImage: NetworkImage(widget.photo),
+                  ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

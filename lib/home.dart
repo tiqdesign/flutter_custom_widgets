@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/components/button.dart';
 import 'package:flutter_components/components/chips_basic.dart';
+import 'package:flutter_components/components/lottie.dart';
 import 'package:flutter_components/components/profileCardMuvu.dart';
 import 'components/appbar.dart';
 
@@ -15,22 +16,25 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Material(
-        elevation: 8,
+    return Material(
+      elevation: 8,
+      child: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.white,
           extendBodyBehindAppBar: false,
           appBar: buildCustomAppBar(),
-          body: buildChipList(),
+          body: Center(child: buildCustomLottie()),
         ),
       ),
     );
   }
 
 
+
   //Widgets
+
   CustomMuvuProfileCard buildCustomMuvuProfileCard() => CustomMuvuProfileCard();
+
   Container buildChipList() {
     return Container(
       margin: EdgeInsets.only(left: 8.0),
@@ -71,7 +75,7 @@ class _HomePageState extends State<HomePage> {
   CustomAppBar buildCustomAppBar() {
     return CustomAppBar(
       color: Colors.white,
-      shadowColor: Colors.grey[400],
+      shadowColor: Colors.amber[400],
       onPressed: () {
         widget.onPressedDrawer();
       },
@@ -82,7 +86,7 @@ class _HomePageState extends State<HomePage> {
       ),
       height: 60.0,
       child: Image.asset(
-        'assets/images/logo.png',
+        'assets/images/beerief.png',
         height: 45.0,
       ),
       photo:
@@ -134,6 +138,12 @@ class _HomePageState extends State<HomePage> {
         ),
         //Custom widgets goes here!
       ]),
+    );
+  }
+
+  CustomLottie buildCustomLottie() {
+    return CustomLottie(
+      fileName: 'plane', height: MediaQuery.of(context).size.height/2 ,
     );
   }
 

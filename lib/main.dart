@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'Mürekkep',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        accentColor: Colors.amber[600],
+        primaryColor: Colors.amber[600],
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MainStack(),
