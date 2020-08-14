@@ -16,6 +16,7 @@ dependencies:
   percent_indicator: ^2.1.5
   lottie: ^0.5.1
   shape_of_view: ^1.0.2
+  google_fonts: ^1.1.0
 
 dev_dependencies:
   flutter_test:

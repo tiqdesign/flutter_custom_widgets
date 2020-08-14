@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -12,23 +13,18 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(50)
-      ),
-      elevation: 4,
-      margin: EdgeInsets.all(0),
-      child: TextFormField(
-        cursorColor: color,
-        decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(50),
-            ),
-            prefixIcon: Icon(icon,),
-            hintText: hintText,
-            labelText: labelText,
-            floatingLabelBehavior: FloatingLabelBehavior.always
-        ),
+    return TextFormField(
+      cursorColor: color,
+      cursorWidth: 5,
+      cursorRadius: Radius.circular(10),
+      decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          prefixIcon: Icon(icon,),
+          hintText: hintText,
+          labelText: labelText,
+          floatingLabelBehavior: FloatingLabelBehavior.always
       ),
     );
   }
