@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.white,
           extendBodyBehindAppBar: false,
           appBar: buildCustomAppBar(),
-          body: Center(child: buildCustomLottie()),
+          body: Center(child: buildChipList()),
         ),
       ),
     );

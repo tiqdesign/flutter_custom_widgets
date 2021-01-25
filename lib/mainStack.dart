@@ -5,7 +5,6 @@ import 'package:flutter_components/login.dart';
 
 class MainStack extends StatefulWidget {
 
-
   const MainStack({Key key}) : super(key: key);
   @override
   _MainStackState createState() => _MainStackState();
@@ -52,7 +51,7 @@ class _MainStackState extends State<MainStack> {
                 bottom: isOpened  ? MediaQuery.of(context).size.height/10 : 0,
                 left:  isOpened  ?  MediaQuery.of(context).size.width*0.6 : 0,
                 right:  isOpened  ? -MediaQuery.of(context).size.width/2 : 0,
-                child: LoginPage())
+                child: HomePage(onPressedDrawer: openDrawer,))
               //HomePage(onPressedDrawer: openDrawer,))
           ],
         ),
